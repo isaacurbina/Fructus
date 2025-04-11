@@ -12,15 +12,15 @@ struct OnboardingView: View {
 	
 	// MARK: - properties
 	
-	
+	var fruits: [Fruit] = fruitsData
 	
 	
 	// MARK: - body
 	
     var body: some View {
 		TabView {
-			ForEach(0..<5) { item in
-				FruitCardView()
+			ForEach(fruits[0...5]) { item in
+				FruitCardView(fruit: item)
 			} // ForEach
 		} // TabView
 		.tabViewStyle(PageTabViewStyle())
@@ -32,6 +32,6 @@ struct OnboardingView: View {
 // MARK: - preview
 
 #Preview {
-    OnboardingView()
+	OnboardingView(fruits: fruitsData)
 		.previewLayout(.sizeThatFits)
 }
