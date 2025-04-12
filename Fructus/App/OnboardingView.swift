@@ -31,7 +31,9 @@ struct OnboardingView: View {
 
 // MARK: - preview
 
-#Preview {
-	OnboardingView(fruits: fruitsData)
-		.previewLayout(.sizeThatFits)
+struct OnboardingView_Previews: PreviewProvider {
+	static var previews: some View {
+		OnboardingView(fruits: fruitsData)
+			.previewLayout(.sizeThatFits)
+	}
 }

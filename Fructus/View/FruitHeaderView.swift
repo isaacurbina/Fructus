@@ -40,7 +40,12 @@ struct FruitHeaderView: View {
     }
 }
 
-#Preview {
-	FruitHeaderView(fruit: fruitsData[0])
-		.previewLayout(.fixed(width: 375, height: 440))
+
+// MARK: - preview
+
+struct FruitHeaderView_Previews: PreviewProvider {
+	static var previews: some View {
+		FruitHeaderView(fruit: fruitsData[0])
+			.previewLayout(.fixed(width: 375, height: 440))
+	}
 }

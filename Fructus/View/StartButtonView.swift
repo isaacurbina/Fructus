@@ -40,8 +40,10 @@ struct StartButtonView: View {
 
 // MARK: - preview
 
-#Preview {
-    StartButtonView()
-		.previewLayout(.sizeThatFits)
-		.preferredColorScheme(.dark)
+struct StartButtonView_Previews: PreviewProvider {
+	static var previews: some View {
+		StartButtonView()
+			.previewLayout(.sizeThatFits)
+			.preferredColorScheme(.dark)
+	}
 }

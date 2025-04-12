@@ -21,8 +21,13 @@ struct SourceLinkView: View {
     }
 }
 
-#Preview {
-    SourceLinkView()
-		.previewLayout(.sizeThatFits)
-		.padding()
+
+// MARK: - preview
+
+struct SoruceLinkView_Previews: PreviewProvider {
+	static var previews: some View {
+		SourceLinkView()
+			.previewLayout(.sizeThatFits)
+			.padding()
+	}
 }
