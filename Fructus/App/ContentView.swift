@@ -17,7 +17,7 @@ struct ContentView: View {
 	
 	// MARK: - body
 	
-    var body: some View {
+	var body: some View {
 		NavigationView {
 			List {
 				ForEach(fruits.shuffled()) { item in
@@ -30,11 +30,16 @@ struct ContentView: View {
 			.navigationTitle("Fruits")
 			.listRowSeparator(.hidden)
 		} // NavigationView
-    }
+	}
 }
 
-#Preview {
-	ContentView(fruits: fruitsData)
-		.previewLayout(.sizeThatFits)
-		.padding()
+
+// MARK: - preview
+
+struct ContentView_Previews: PreviewProvider {
+	static var previews: some View {
+		ContentView(fruits: fruitsData)
+			.previewLayout(.sizeThatFits)
+			.padding()
+	}
 }

@@ -38,7 +38,7 @@ struct FruitDetailView: View {
 							.multilineTextAlignment(.leading)
 						
 						// nutrients
-						
+						FruitNutrientsView(fruit: fruit)
 						
 						// subheadline
 						Text("Learn more about \(fruit.title)".uppercased())
@@ -69,7 +69,12 @@ struct FruitDetailView: View {
     }
 }
 
-#Preview {
-	FruitDetailView(fruit: fruitsData[0])
-		.previewLayout(.sizeThatFits)
+
+// MARK: - preview
+
+struct FruitDetailView_Previews: PreviewProvider {
+	static var previews: some View {
+		FruitDetailView(fruit: fruitsData[0])
+			.previewLayout(.sizeThatFits)
+	}
 }
