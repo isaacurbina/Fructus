@@ -13,6 +13,7 @@ struct SettingsView: View {
 	// MARK: - properties
 	
 	@Environment(\.presentationMode) var presentationMode
+	@AppStorage("isOnboarding") var isOnboarding: Bool = false
 	
 	
 	// MARK: - body
@@ -39,6 +40,37 @@ struct SettingsView: View {
 					
 					// mark - section 2
 					
+					GroupBox(
+						label: SettingsLabelView(labelText: "Customization", labelImage: "paintbrush")
+					) {
+						Divider().padding(.vertical, 4)
+						Text("If you wish, you can restart the application by toggle the switch in this box. That way it starts the onboarding process and you will see the volume screen again.")
+							.padding(.vertical, 8)
+							.frame(minHeight: 60)
+							.layoutPriority(1)
+							.font(.footnote)
+							.multilineTextAlignment(.leading)
+						
+						Toggle(isOn: $isOnboarding) {
+							if isOnboarding {
+								Text("Restarted".uppercased())
+									.fontWeight(.bold)
+									.foregroundColor(.green)
+								
+							} else {
+								Text("Restart".uppercased())
+									.fontWeight(.bold)
+									.foregroundColor(.secondary)
+							}
+						}
+						.padding()
+						.background(
+							Color(UIColor.tertiarySystemBackground)
+							.clipShape(
+								RoundedRectangle(cornerRadius: 8, style: .continuous)
+							)
+						)
+					}
 					
 					// mark - section 3
 					
